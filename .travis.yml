@@ -1,3 +1,16 @@
 language: go
 go:
  - 1.9.x
+jobs:
+  include:
+    - stage: GitHub Release
+      script: ./build.sh
+      deploy:
+        provider: releases
+        api_key: $GITHUB_OAUTH_TOKEN
+        skip_cleanup: true
+        file: binaries.tar.gz
+        overwrite: true
+        on:
+          tags: true
+
