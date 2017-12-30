@@ -4,7 +4,9 @@
 
 This program listens for [RuuviTag](https://tag.ruuvi.com/) devices and posts JSON data to HTTP endpoint specified by HTTP_URL environment variable.
 
-Currently support [ruuvi sensor protocol 3](https://github.com/ruuvi/ruuvi-sensor-protocols).
+Bluetooth implementation relies on [Paypal's GATT library](https://github.com/paypal/gatt). See [setup](https://github.com/paypal/gatt#setup).
+
+Currently supports [ruuvi sensor protocol 3](https://github.com/ruuvi/ruuvi-sensor-protocols). 
 
 JSON data looks like this:
 
@@ -22,6 +24,7 @@ JSON data looks like this:
 }
 ```
 I currently use this project to record sensor data from Ruuvi Tags around my apartment. The data is posted straight to ElasticSearch index.
+
 
 # ElasticSearch quickstart
 
