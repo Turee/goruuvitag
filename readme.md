@@ -73,8 +73,10 @@ $ ./goruuvitag
 
 # TODO
 
+- [x] Listen and parse ruuvi data
+- [x] ElasticSearch support
 - [ ] [InfluxDB support](https://docs.influxdata.com/influxdb/v1.4/guides/writing_data/)
-- [ ] Precompiled binaries
+- [x] Precompiled binaries
 
 # License
 
