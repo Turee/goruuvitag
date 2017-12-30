@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/Turee/goruuvitag.svg?branch=master)](https://travis-ci.org/Turee/goruuvitag)
+
 # Description
 
 This program listens for [RuuviTag](https://tag.ruuvi.com/) devices and posts JSON data to HTTP endpoint specified by HTTP_URL environment variable.
