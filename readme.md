@@ -26,13 +26,22 @@ JSON data looks like this:
 I currently use this project to record sensor data from Ruuvi Tags around my apartment. The data is posted straight to ElasticSearch index.
 
 
-# ElasticSearch quickstart
+# ElasticSearch + Kibana quickstart
 
-Create index
+Start ELK stack using docker
+
 ```
-PUT ruuvi/_mapping
+$ sudo docker run -p 5601:5601 -p 9200:9200  -p 5044:5044 --restart unless-stopped \
+    -v elk-data:/var/lib/elasticsearch --name elk sebp/elk
+```
+
+Access Kibana on http://localhost:5601 , navigate to developer tools.
+
+Create index by executing following in developer tools:
+```
+PUT ruuvi
 {
-  "type": {
+  "mappings": {
     "data_point": {
       "properties": {
         "Address": {
@@ -73,6 +82,8 @@ Start posting data.
 $ export HTTP_URL=http://<elasticsearch ip>:9200/ruuvi/data_point
 $ ./goruuvitag
 ```
+
+Explore your data using Kibana :).
 
 # TODO
 
