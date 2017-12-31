@@ -1,14 +1,13 @@
 language: go
 go:
  - 1.9.x
-script:
-  - go test -race -coverprofile=coverage.txt -covermode=atomic
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
 jobs:
   include:
+    - stage: Test
+      script: go test -race -coverprofile=coverage.txt -covermode=atomic
+      after_success: bash <(curl -s https://codecov.io/bash)
     - stage: GitHub Release
-      script: ./build.sh
+      script: ./build_release.sh
       deploy:
         provider: releases
         api_key: $GITHUB_OAUTH_TOKEN
