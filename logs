@@ -1,0 +1,746 @@
+State: PoweredOn
+scanning...
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:FA:C2:A9:CF:DB:55, NAME:()
+  TX Power Level    = 0
+[153 4 3 52 24 78 203 219 255 246 255 212 4 21 11 209]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:6F:93:66:9E:41:05, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 3 30 136 47 252 167]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:FA:C2:A9:CF:DB:55, NAME:()
+  TX Power Level    = 0
+[153 4 3 52 24 77 203 219 255 246 255 210 4 20 11 215]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:FA:C2:A9:CF:DB:55, NAME:()
+  TX Power Level    = 0
+[153 4 3 52 24 77 203 219 255 244 255 208 4 19 11 215]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:6F:93:66:9E:41:05, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 3 30 136 47 252 167]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:65:C8:EF:AD:1B:40, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:6F:93:66:9E:41:05, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 3 30 136 47 252 167]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:65:C8:EF:AD:1B:40, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:FA:C2:A9:CF:DB:55, NAME:()
+  TX Power Level    = 0
+[153 4 3 52 24 77 203 219 255 246 255 209 4 17 11 221]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:6F:93:66:9E:41:05, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 3 30 136 47 252 167]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:6F:93:66:9E:41:05, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 3 30 136 47 252 167]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:65:C8:EF:AD:1B:40, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:FA:C2:A9:CF:DB:55, NAME:()
+  TX Power Level    = 0
+[153 4 3 52 24 76 203 219 255 244 255 212 4 18 11 209]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:C0:28:8D:D8:45:D9, NAME:( )
+  TX Power Level    = 0
+[3 0 1 16 93 0 0 8 240 152 157 126 146 231 192 40 141 216 69 217 34]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:5F:4D:41:97:34:54, NAME:()
+  TX Power Level    = 24
+[76 0 16 5 1 24 167 222 148]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:65:C8:EF:AD:1B:40, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:65:C8:EF:AD:1B:40, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:FA:C2:A9:CF:DB:55, NAME:()
+  TX Power Level    = 0
+[153 4 3 52 24 76 203 219 255 243 255 213 4 16 11 173]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:6F:93:66:9E:41:05, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 3 30 136 47 252 167]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:5F:4D:41:97:34:54, NAME:()
+  TX Power Level    = 24
+[76 0 16 5 1 24 167 222 148]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:5F:4D:41:97:34:54, NAME:()
+  TX Power Level    = 24
+[76 0 16 5 1 24 167 222 148]
+
+Peripheral ID:6F:93:66:9E:41:05, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 3 30 136 47 252 167]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:65:C8:EF:AD:1B:40, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:FA:C2:A9:CF:DB:55, NAME:()
+  TX Power Level    = 0
+[153 4 3 52 24 76 203 219 255 246 255 212 4 21 11 215]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:5F:4D:41:97:34:54, NAME:()
+  TX Power Level    = 24
+[76 0 16 5 1 24 167 222 148]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:65:C8:EF:AD:1B:40, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:60:9E:98:FE:17:03, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 9 29 65 31 109 56]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:5F:4D:41:97:34:54, NAME:()
+  TX Power Level    = 24
+[76 0 16 5 1 24 167 222 148]
+
+Peripheral ID:6F:93:66:9E:41:05, NAME:()
+  TX Power Level    = 12
+[76 0 16 6 3 30 136 47 252 167]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:40:57:97:CF:76:7A, NAME:()
+  TX Power Level    = 26
+[76 0 16 5 36 152 152 13 98]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:4C:79:23:94:76:3F, NAME:()
+  TX Power Level    = 0
+[224 0 1 76 202 117 121 186]
+
+Peripheral ID:4E:08:7E:DF:28:82, NAME:()
+  TX Power Level    = 8
+[76 0 16 7 33 31 125 24 190 131 24]
+
+Peripheral ID:5F:4D:41:97:34:54, NAME:()
+  TX Power Level    = 24
+[76 0 16 5 1 24 167 222 148]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:0F:1D:84:C7:31:BC, NAME:()
+  TX Power Level    = 0
+[6 0 1 9 32 2 209 178 119 245 178 217 50 196 59 16 118 245 6 53 237 238 143 50 215 69 1 94 251]
+
+Peripheral ID:2A:0A:91:DD:07:B5, NAME:()
+  TX Power Level    = 0
+[]

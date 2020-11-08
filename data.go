@@ -16,14 +16,15 @@ var (
 
 //SensorData to be posted
 type SensorData struct {
-	Temp          float64
+	Temperature          float64
 	Humidity      float64
 	Pressure      uint32
 	Battery       uint16
-	Address       string
 	AccelerationX int16
 	AccelerationY int16
 	AccelerationZ int16
+	Address string
+	MovementCounter       uint8
 	TimeStamp     time.Time
 }
 
@@ -39,6 +40,21 @@ type SensorFormat3 struct {
 	AccelerationY       int16
 	AccelerationZ       int16
 	BatteryVoltageMv    uint16
+}
+
+//SensorFormat5 https://github.com/ruuvi/ruuvi-sensor-protocols/blob/master/dataformat_05.md#data-format-5-protocol-specification-rawv2
+type SensorFormat5 struct {
+	ManufacturerID      uint16
+	DataFormat          uint8
+	Temperature         float32
+	Humidity            uint16
+	Pressure            uint16
+	AccelerationX       int16
+	AccelerationY       int16
+	AccelerationZ       int16
+	BatteryVoltageMv    uint16
+	MovementCounter    uint8
+	MeasurementSequence    uint16
 }
 
 func sendSensorData(data *SensorData, url string) {
@@ -69,6 +85,7 @@ func parseTemperature(t uint8, f uint8) float64 {
 	return temp
 }
 
+// https://github.com/ruuvi/ruuvi-sensor-protocols
 func parseSensorFormat3(data []byte) *SensorData {
 	reader := bytes.NewReader(data)
 	result := SensorFormat3{}
@@ -77,19 +94,43 @@ func parseSensorFormat3(data []byte) *SensorData {
 		panic(err)
 	}
 	sensorData := SensorData{}
-	sensorData.Temp = parseTemperature(result.Temperature, result.TemperatureFraction)
+	sensorData.Temperature = parseTemperature(result.Temperature, result.TemperatureFraction)
 	sensorData.Humidity = float64(result.Humidity) / 2.0
 	sensorData.Pressure = uint32(result.Pressure) + 50000
 	sensorData.Battery = result.BatteryVoltageMv
 	sensorData.AccelerationX = result.AccelerationX
 	sensorData.AccelerationY = result.AccelerationY
 	sensorData.AccelerationZ = result.AccelerationZ
+	fmt.Printf("%+v", sensorData)
 	return &sensorData
+}
+
+// https://github.com/ruuvi/ruuvi-sensor-protocols
+func parseSensorFormat5(data []byte) *SensorData {
+	reader := bytes.NewReader(data)
+	result := SensorFormat5{}
+	err := binary.Read(reader, binary.BigEndian, &result)
+	if err != nil {
+		panic(err)
+	}
+	sensorData := SensorData{}
+	sensorData.Temperature = float64(result.Temperature)
+	sensorData.Humidity = float64(result.Humidity) / 2.0
+	sensorData.Pressure = uint32(result.Pressure) + 50000
+	sensorData.Battery = result.BatteryVoltageMv
+	sensorData.AccelerationX = result.AccelerationX
+	sensorData.AccelerationY = result.AccelerationY
+	sensorData.AccelerationZ = result.AccelerationZ
+	fmt.Printf("%+v", sensorData)
+	return &sensorData
+}
+
+func IsRuuviTag(data []byte) bool {
+	return binary.LittleEndian.Uint16(data[0:2]) == 0x0499
 }
 
 //ParseRuuviData parses ruuvidata
 func ParseRuuviData(data []byte, a string) {
-
 	sendData := func(sensorData *SensorData) {
 		sensorData.Address = a
 		sensorData.TimeStamp = time.Now()
@@ -99,17 +140,14 @@ func ParseRuuviData(data []byte, a string) {
 
 	}
 
-	if len(data) == 20 && binary.LittleEndian.Uint16(data[0:2]) == 0x0499 {
-		sensorFormat := data[2]
-		fmt.Printf("Ruuvi data with sensor format %d\n", sensorFormat)
-		switch sensorFormat {
-		case 3:
-			sendData(parseSensorFormat3(data))
-		default:
-			fmt.Printf("Unknown sensor format %d", sensorFormat)
-		}
-	} else {
-		fmt.Printf("Not a ruuvi device \n")
+	sensorFormat := data[2]
+	fmt.Printf("Ruuvi data with sensor format %d\n", sensorFormat)
+	switch sensorFormat {
+	case 3:
+		sendData(parseSensorFormat3(data))
+	case 5:
+		sendData(parseSensorFormat5(data))
+	default:
+		fmt.Printf("Unknown sensor format %d", sensorFormat)
 	}
-
 }
