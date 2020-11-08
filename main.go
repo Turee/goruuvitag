@@ -1,6 +1,9 @@
 package main
 
 import (
+	"bytes"
+	"encoding/binary"
+
 	"fmt"
 	"log"
 	"sync"
@@ -41,6 +44,25 @@ func onStateChanged(d gatt.Device, s gatt.State) {
 }
 
 func onPeriphDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
+	if (p.ID() != "FA:C2:A9:CF:DB:55") {
+		return
+	}
+
+	fmt.Printf("\nPeripheral ID:%s, NAME:(%+v)\n", p.ID(), p.Device())
+	fmt.Println("  TX Power Level    =", a.TxPowerLevel)
+	fmt.Printf("%d\n", a.ManufacturerData)
+	
+	reader := bytes.NewReader(a.ManufacturerData)
+	result := SensorFormat3{}
+	err := binary.Read(reader, binary.BigEndian, &result)
+	
+	if err == nil {
+		fmt.Printf("%+v\n", result)
+	}
+	
+	if !IsRuuviTag(a.ManufacturerData) || err != nil {
+		return
+	}
 	fmt.Printf("\nPeripheral ID:%s, NAME:(%s)\n", p.ID(), p.Name())
 	fmt.Println("  TX Power Level    =", a.TxPowerLevel)
 	ParseRuuviData(a.ManufacturerData, p.ID())
