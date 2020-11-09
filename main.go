@@ -39,27 +39,27 @@ func onStateChanged(d gatt.Device, s gatt.State) {
 		isPoweredOn = false
 		d.Init(onStateChanged)
 	default:
-		log.Println("WARN: unhandled state: ", string(s))
+		log.Println("WARN: unhandled state: ", fmt.Sprint(s))
 	}
 }
 
 func onPeriphDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
-	if (p.ID() != "FA:C2:A9:CF:DB:55") {
+	if p.ID() != "FA:C2:A9:CF:DB:55" {
 		return
 	}
 
 	fmt.Printf("\nPeripheral ID:%s, NAME:(%+v)\n", p.ID(), p.Device())
 	fmt.Println("  TX Power Level    =", a.TxPowerLevel)
 	fmt.Printf("%d\n", a.ManufacturerData)
-	
+
 	reader := bytes.NewReader(a.ManufacturerData)
 	result := SensorFormat3{}
 	err := binary.Read(reader, binary.BigEndian, &result)
-	
+
 	if err == nil {
 		fmt.Printf("%+v\n", result)
 	}
-	
+
 	if !IsRuuviTag(a.ManufacturerData) || err != nil {
 		return
 	}
