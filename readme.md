@@ -1,3 +1,9 @@
+# Setup
+
+sudo hciconfig hci0 down
+sudo setcap 'cap_net_raw,cap_net_admin=eip' goruuvitag
+
+
 [![Build Status](https://travis-ci.org/Turee/goruuvitag.svg?branch=master)](https://travis-ci.org/Turee/goruuvitag)
 
 # Description
