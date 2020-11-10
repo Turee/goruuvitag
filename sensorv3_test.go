@@ -1,4 +1,4 @@
-package goruuvitag
+package main
 
 import (
 	"testing"

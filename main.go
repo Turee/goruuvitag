@@ -1,4 +1,4 @@
-package goruuvitag
+package main
 
 import (
 	"fmt"
@@ -44,10 +44,12 @@ func onPeriphDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
 	if !IsRuuviTag(a.ManufacturerData) {
 		return
 	}
+
 	fmt.Printf("\nPeripheral ID:%s, NAME:(%s)\n", p.ID(), p.Name())
 	fmt.Println("  TX Power Level    =", a.TxPowerLevel)
 	sensorData, err := ParseRuuviData(a.ManufacturerData, p.ID())
 	if err != nil {
+		log.Fatal(err)
 		return
 	}
 

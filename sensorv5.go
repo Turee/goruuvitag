@@ -1,26 +1,10 @@
-package goruuvitag
+package main
 
 import (
 	"fmt"
-	"log"
 	"math"
 	"strings"
 )
-
-// SensorDataFormat5 to be posted
-type SensorDataFormat5 struct {
-	Temperature         *float64
-	Humidity            *float64
-	Pressure            *uint32
-	BatteryVoltageMv    *int
-	txPower             *int
-	AccelerationX       *float64
-	AccelerationY       *float64
-	AccelerationZ       *float64
-	MovementCounter     *uint8
-	MeasurementSequence *uint16
-	MAC                 *string
-}
 
 func readTemperature(val uint16) *float64 {
 	if val == 0x8000 {
@@ -134,14 +118,8 @@ func fromTwosComplement(bytes uint16, bits uint16) int {
 // its pointer will be nil.
 // Pick fields according to
 // https://github.com/ruuvi/ruuvi-sensor-protocols/blob/master/dataformat_05.md#data-format-5-protocol-specification-rawv2
-func ParseSensorFormat5(data []byte) *SensorDataFormat5 {
-	defer func() {
-		if r := recover(); r != nil {
-			log.Println(r)
-		}
-	}()
-
-	sensorData := SensorDataFormat5{}
+func ParseSensorFormat5(data []byte) *SensorData {
+	sensorData := SensorData{}
 	sensorData.Temperature = readTemperature(bToUint(data[1], data[2]))
 
 	sensorData.Humidity = readHumidity(bToUint(data[3], data[4]))

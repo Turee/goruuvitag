@@ -1,23 +1,9 @@
-package goruuvitag
+package main
 
 import (
 	"bytes"
 	"encoding/binary"
-	"time"
 )
-
-//SensorData to be posted
-type SensorData struct {
-	Temperature   float64
-	Humidity      float64
-	Pressure      uint32
-	Battery       uint16
-	AccelerationX int16
-	AccelerationY int16
-	AccelerationZ int16
-	Address       string
-	TimeStamp     time.Time
-}
 
 //SensorFormat3 RuuviData
 type SensorFormat3 struct {
@@ -45,7 +31,7 @@ func parseFormat3Temperature(t uint8, f uint8) float64 {
 }
 
 // https://github.com/ruuvi/ruuvi-sensor-protocols
-func ParseSensorFormat3(data []byte) *SensorData {
+func ParseSensorFormat3(data []byte, macAddress string) *SensorData {
 	reader := bytes.NewReader(data)
 	result := SensorFormat3{}
 	err := binary.Read(reader, binary.BigEndian, &result)
@@ -53,12 +39,21 @@ func ParseSensorFormat3(data []byte) *SensorData {
 		panic(err)
 	}
 	sensorData := SensorData{}
-	sensorData.Temperature = parseFormat3Temperature(result.Temperature, result.TemperatureFraction)
-	sensorData.Humidity = float64(result.Humidity) / 2.0
-	sensorData.Pressure = uint32(result.Pressure) + 50000
-	sensorData.Battery = result.BatteryVoltageMv
-	sensorData.AccelerationX = result.AccelerationX
-	sensorData.AccelerationY = result.AccelerationY
-	sensorData.AccelerationZ = result.AccelerationZ
+	temperature := parseFormat3Temperature(result.Temperature, result.TemperatureFraction)
+	humidity := float64(result.Humidity) / 2.0
+	pressure := uint32(result.Pressure) + 50000
+	batteryVoltage := int(result.BatteryVoltageMv)
+	accelerationX := float64(result.AccelerationX) / 1000
+	accelerationY := float64(result.AccelerationY) / 1000
+	accelerationZ := float64(result.AccelerationZ) / 1000
+
+	sensorData.Temperature = &temperature
+	sensorData.Humidity = &humidity
+	sensorData.Pressure = &pressure
+	sensorData.BatteryVoltageMv = &batteryVoltage
+	sensorData.AccelerationX = &accelerationX
+	sensorData.AccelerationY = &accelerationY
+	sensorData.AccelerationZ = &accelerationZ
+	sensorData.MAC = &macAddress
 	return &sensorData
 }

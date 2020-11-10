@@ -1,4 +1,4 @@
-package goruuvitag
+package main
 
 import (
 	"testing"
@@ -75,10 +75,4 @@ func TestParseSensorFormat5InvalidValues(t *testing.T) {
 	assert.Nil(t, results.MeasurementSequence)
 	assert.Nil(t, results.MovementCounter)
 	assert.Nil(t, results.MAC)
-}
-
-func TestParseSensorFormat5MissingFields(t *testing.T) {
-	data, _ := hex.DecodeString("058000FFFFFFFF8")
-
-	assert.NotPanics(t, func() { ParseSensorFormat5(data) })
 }
