@@ -41,16 +41,17 @@ func onStateChanged(d gatt.Device, s gatt.State) {
 }
 
 func onPeriphDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
-	fmt.Printf("\nPeripheral ID:%s, NAME:(%+v)\n", p.ID(), p.Device())
-	fmt.Println("  TX Power Level    =", a.TxPowerLevel)
-	fmt.Printf("%d\n", a.ManufacturerData)
-
 	if !IsRuuviTag(a.ManufacturerData) {
 		return
 	}
 	fmt.Printf("\nPeripheral ID:%s, NAME:(%s)\n", p.ID(), p.Name())
 	fmt.Println("  TX Power Level    =", a.TxPowerLevel)
-	ParseRuuviData(a.ManufacturerData, p.ID())
+	sensorData, err := ParseRuuviData(a.ManufacturerData, p.ID())
+	if err != nil {
+		return
+	}
+
+	fmt.Printf("%+v", sensorData)
 }
 
 func main() {
