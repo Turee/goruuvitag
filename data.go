@@ -7,39 +7,11 @@ import (
 	"fmt"
 	"net/http"
 	"os"
-	"time"
 )
 
 var (
 	httpURL = os.Getenv("HTTP_URL")
 )
-
-//SensorData to be posted
-type SensorData struct {
-	Temperature   float64
-	Humidity      float64
-	Pressure      uint32
-	Battery       uint16
-	AccelerationX int16
-	AccelerationY int16
-	AccelerationZ int16
-	Address       string
-	TimeStamp     time.Time
-}
-
-//SensorFormat3 RuuviData
-type SensorFormat3 struct {
-	ManufacturerID      uint16
-	DataFormat          uint8
-	Humidity            uint8
-	Temperature         uint8
-	TemperatureFraction uint8
-	Pressure            uint16
-	AccelerationX       int16
-	AccelerationY       int16
-	AccelerationZ       int16
-	BatteryVoltageMv    uint16
-}
 
 func sendSensorData(data *SensorData, url string) {
 	s, err := json.Marshal(data)
@@ -58,60 +30,33 @@ func sendSensorData(data *SensorData, url string) {
 	}
 }
 
-func parseFormat3Temperature(t uint8, f uint8) float64 {
-	var mask uint8
-	mask = (1 << 7)
-	isNegative := (t & mask) > 0
-	temp := float64(t&^mask) + float64(f)/100.0
-	if isNegative {
-		temp *= -1
-	}
-	return temp
-}
-
-// https://github.com/ruuvi/ruuvi-sensor-protocols
-func parseSensorFormat3(data []byte) *SensorData {
-	reader := bytes.NewReader(data)
-	result := SensorFormat3{}
-	err := binary.Read(reader, binary.BigEndian, &result)
-	if err != nil {
-		panic(err)
-	}
-	sensorData := SensorData{}
-	sensorData.Temperature = parseFormat3Temperature(result.Temperature, result.TemperatureFraction)
-	sensorData.Humidity = float64(result.Humidity) / 2.0
-	sensorData.Pressure = uint32(result.Pressure) + 50000
-	sensorData.Battery = result.BatteryVoltageMv
-	sensorData.AccelerationX = result.AccelerationX
-	sensorData.AccelerationY = result.AccelerationY
-	sensorData.AccelerationZ = result.AccelerationZ
-	return &sensorData
-}
-
 // IsRuuviTag A helper to check if the manufacturer id of a ble advertisement matches Ruuvi's
 func IsRuuviTag(data []byte) bool {
 	return binary.LittleEndian.Uint16(data[0:2]) == 0x0499
 }
 
 //ParseRuuviData parses ruuvidata
-func ParseRuuviData(data []byte, a string) {
-	sendData := func(sensorData *SensorData) {
-		sensorData.Address = a
-		sensorData.TimeStamp = time.Now()
-		if httpURL != "" {
-			sendSensorData(sensorData, httpURL)
+func ParseRuuviData(data []byte, a string) (*SensorData, *SensorData) {
+	/*
+		sendData := func(sensorData *SensorData) {
+			sensorData.Address = a
+			sensorData.TimeStamp = time.Now()
+			if httpURL != "" {
+				sendSensorData(sensorData, httpURL)
+			}
 		}
-
-	}
+	*/
 
 	sensorFormat := data[2]
 	fmt.Printf("Ruuvi data with sensor format %d\n", sensorFormat)
 	switch sensorFormat {
 	case 3:
-		sendData(parseSensorFormat3(data))
+		ParseSensorFormat3(data)
 	case 5:
 		ParseSensorFormat5(data)
 	default:
 		fmt.Printf("Unknown sensor format %d", sensorFormat)
 	}
+
+	return nil, nil
 }
