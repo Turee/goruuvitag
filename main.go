@@ -1,9 +1,6 @@
-package main
+package goruuvitag
 
 import (
-	"bytes"
-	"encoding/binary"
-
 	"fmt"
 	"log"
 	"sync"
