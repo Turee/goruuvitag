@@ -14,8 +14,9 @@ var writeAPI api.WriteAPI
 
 // InitializeClient is required to open the connection
 func InitializeClient() {
-	viper.SetConfigName("config")
+	viper.SetConfigName("goruuvitag")
 	viper.AddConfigPath(".")
+	viper.AddConfigPath("../etc")
 	if err := viper.ReadInConfig(); err != nil {
 		// no point to continue without a config
 		panic(err)

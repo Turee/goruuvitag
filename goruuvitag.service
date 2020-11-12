@@ -1,0 +1,13 @@
+[Unit]
+Description=RuuviTag listener
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+User=pi
+ExecStart=/usr/local/bin/goruuvitag
+
+[Install]
+WantedBy=multi-user.target

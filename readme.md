@@ -1,8 +1,34 @@
+# Description
+
+Fork of <https://github.com/Turee/goruuvitag>. Added support for RuuviTag's protocol v5, InfluxDB2. Also, some small polish here and here
+to make the project shine.
+
+# Requirements
+
+- Recent enough Go (> 1.15) due to module support and tests
+- Bluetooth module works at least on Raspbian
+
 # Setup
 
+## For a local test
+
+```
+cp goruuvitag.json.example goruuvitag.json
+go build
 sudo hciconfig hci0 down
 sudo setcap 'cap_net_raw,cap_net_admin=eip' goruuvitag
+./goruuvitag
+```
 
+## Install a systemd service
+
+```
+./install.sh
+```
+
+# Original readme follows
+
+---
 
 [![Build Status](https://travis-ci.org/Turee/goruuvitag.svg?branch=master)](https://travis-ci.org/Turee/goruuvitag)
 
@@ -12,7 +38,7 @@ This program listens for [RuuviTag](https://tag.ruuvi.com/) devices and posts JS
 
 Bluetooth implementation relies on [Paypal's GATT library](https://github.com/paypal/gatt). See [setup](https://github.com/paypal/gatt#setup).
 
-Currently supports [ruuvi sensor protocol 3](https://github.com/ruuvi/ruuvi-sensor-protocols). 
+Currently supports [ruuvi sensor protocol 3](https://github.com/ruuvi/ruuvi-sensor-protocols).
 
 JSON data looks like this:
 
@@ -29,8 +55,8 @@ JSON data looks like this:
 	"TimeStamp": "2017-12-30T15:02:44.3560173+02:00"
 }
 ```
-I currently use this project to record sensor data from Ruuvi Tags around my apartment. The data is posted straight to ElasticSearch index.
 
+I currently use this project to record sensor data from Ruuvi Tags around my apartment. The data is posted straight to ElasticSearch index.
 
 # ElasticSearch + Kibana quickstart
 
@@ -44,6 +70,7 @@ $ sudo docker run -p 5601:5601 -p 9200:9200  -p 5044:5044 --restart unless-stopp
 Access Kibana on http://localhost:5601 , navigate to developer tools.
 
 Create index by executing following in developer tools:
+
 ```
 PUT ruuvi
 {
@@ -82,6 +109,7 @@ PUT ruuvi
   }
 }
 ```
+
 Start posting data.
 
 ```
