@@ -47,6 +47,7 @@ func WriteData(sensorData *SensorData) {
 		},
 		map[string]interface{}{
 			"temperature":         *sensorData.Temperature,
+			"batteryMv":           *sensorData.BatteryVoltageMv,
 			"humidity":            *sensorData.Humidity,
 			"pressure":            *sensorData.Pressure,
 			"txPower":             *sensorData.TxPower,
