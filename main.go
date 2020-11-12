@@ -3,7 +3,10 @@ package main
 import (
 	"fmt"
 	"log"
+	"os"
+	"os/signal"
 	"sync"
+	"syscall"
 	"time"
 
 	"github.com/paypal/gatt"
@@ -53,15 +56,24 @@ func onPeriphDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
 		return
 	}
 
-	fmt.Printf("%+v", sensorData)
+	WriteData(sensorData)
 }
 
 func main() {
+	InitializeClient()
 	d, err := gatt.NewDevice(option.DefaultClientOptions...)
 	if err != nil {
 		log.Fatalf("Failed to open device, err: %s\n", err)
 		return
 	}
+
+	sigs := make(chan os.Signal, 1)
+	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
+	go func() {
+		<-sigs
+		CleanUp()
+		os.Exit(0)
+	}()
 
 	// Register handlers.
 	d.Handle(gatt.PeripheralDiscovered(onPeriphDiscovered))
