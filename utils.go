@@ -17,10 +17,11 @@ type SensorData struct {
 	Humidity            *float64
 	Pressure            *uint32
 	BatteryVoltageMv    *int
-	txPower             *int
+	TxPower             *int
 	AccelerationX       *float64
 	AccelerationY       *float64
 	AccelerationZ       *float64
+	Acceleration        *float64
 	MovementCounter     *uint8
 	MeasurementSequence *uint16
 	MAC                 *string

@@ -114,6 +114,11 @@ func fromTwosComplement(bytes uint16, bits uint16) int {
 	return signBit + result
 }
 
+func getTotalAcceleration(accX, accY, accZ float64) *float64 {
+	acc := math.Sqrt(accX*accX + accY*accY + accZ*accZ)
+	return &acc
+}
+
 // ParseSensorFormat5 parses the given input and returns a struct which contains pointers to the read values. If a value cannot be read,
 // its pointer will be nil.
 // Pick fields according to
@@ -128,10 +133,13 @@ func ParseSensorFormat5(data []byte) *SensorData {
 	sensorData.AccelerationX = getAcceleration(bToUint(data[7], data[8]))
 	sensorData.AccelerationY = getAcceleration(bToUint(data[9], data[10]))
 	sensorData.AccelerationZ = getAcceleration(bToUint(data[11], data[12]))
+	if sensorData.AccelerationX != nil && sensorData.AccelerationY != nil && sensorData.AccelerationZ != nil {
+		sensorData.Acceleration = getTotalAcceleration(*sensorData.AccelerationX, *sensorData.AccelerationY, *sensorData.AccelerationZ)
+	}
 
 	batteryVoltage, txPower := readPowerInfo(bToUint(data[13], data[14]))
 	sensorData.BatteryVoltageMv = batteryVoltage
-	sensorData.txPower = txPower
+	sensorData.TxPower = txPower
 	sensorData.MovementCounter = readMovementCounter(uint8(data[15]))
 	sensorData.MeasurementSequence = readMeasurementSequence(bToUint(data[16], data[17]))
 
