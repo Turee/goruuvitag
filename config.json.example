@@ -1,0 +1,11 @@
+{
+  "influxdb": {
+    "host": "",
+    "token": "",
+    "org": "",
+    "bucket": ""
+  },
+  "ruuvitag-labels": {
+    "D3:4D:BE:EF:11:22": "my favorite tag"
+  }
+}
