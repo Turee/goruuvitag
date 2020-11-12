@@ -1,19 +1,19 @@
 # Description
 
-Fork of <https://github.com/Turee/goruuvitag>. Added support for RuuviTag's protocol v5, InfluxDB2. Also, some small polish here and here
-to make the project shine.
+Fork of <https://github.com/Turee/goruuvitag>. Added support for RuuviTag's protocol v5, InfluxDB2 and systemd. Also, some small polish here and there.
 
 # Requirements
 
 - Recent enough Go (> 1.15) due to module support and tests
 - Bluetooth module works at least on Raspbian
+- InfluxDB2 - One option is to sign up for the free plan in Influx Cloud
 
 # Setup
 
 ## For a local test
 
 ```
-cp goruuvitag.json.example goruuvitag.json
+cp goruuvitag.json.example goruuvitag.json # You might want to check the insides too
 go build
 sudo hciconfig hci0 down
 sudo setcap 'cap_net_raw,cap_net_admin=eip' goruuvitag
