@@ -16,7 +16,7 @@ var writeAPI api.WriteAPI
 func InitializeClient() {
 	viper.SetConfigName("goruuvitag")
 	viper.AddConfigPath(".")
-	viper.AddConfigPath("../etc")
+	viper.AddConfigPath("/usr/local/etc")
 	if err := viper.ReadInConfig(); err != nil {
 		// no point to continue without a config
 		panic(err)
