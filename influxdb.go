@@ -97,7 +97,7 @@ func WriteData(sensorData *SensorData) {
 	}
 
 	point := influxdb2.NewPoint(
-		"system",
+		"ruuvitag",
 		map[string]string{
 			"label": label,
 		},
