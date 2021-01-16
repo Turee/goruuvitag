@@ -2,6 +2,7 @@ package main
 
 import (
 	"errors"
+	"log"
 	"strings"
 	"time"
 
@@ -107,15 +108,32 @@ func WriteData(sensorData *SensorData) {
 	writeAPI.WritePoint(point)
 }
 
-// SendSysInfo sends memory info + uptime to influxdb. Expects connection to be open already
+// SendSysInfo sends process uptime, system memory info and system uptime to influxdb. Expects connection to be open already
 func SendSysInfo() {
 	host, err := sysinfo.Host()
 
 	if err != nil {
+		log.Fatal("Could not get host information")
+		return
+	}
+
+	process, err := sysinfo.Self()
+
+	if err != nil {
+		log.Fatal("Could not get own process data")
+		return
+	}
+
+	info, err := process.Info()
+
+	if err != nil {
+		log.Fatal("Could not get own process information")
 		return
 	}
 
 	payload := map[string]interface{}{}
+	payload["process_uptime"] = time.Now().Sub(info.StartTime)
+
 	payload["uptime"] = host.Info().Uptime()
 
 	memoryInfo, err := host.Memory()

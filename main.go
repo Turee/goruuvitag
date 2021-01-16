@@ -67,6 +67,7 @@ func createSysInfoSender() chan struct{} {
 			select {
 			case <-sysInfoTicker.C:
 				SendSysInfo()
+				log.Println("Sent system info")
 			case <-quit:
 				sysInfoTicker.Stop()
 				return
