@@ -49,7 +49,7 @@ func onPeriphDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
 	}
 
 	fmt.Printf("\nPeripheral ID:%s, NAME:(%s)\n", p.ID(), p.Name())
-	fmt.Println("  TX Power Level    =", a.TxPowerLevel)
+	// fmt.Println("  TX Power Level    =", a.TxPowerLevel)
 	sensorData, err := ParseRuuviData(a.ManufacturerData, p.ID())
 	if err != nil {
 		log.Fatal(err)
