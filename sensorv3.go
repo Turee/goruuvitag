@@ -30,7 +30,7 @@ func parseFormat3Temperature(t uint8, f uint8) float64 {
 	return temp
 }
 
-// https://github.com/ruuvi/ruuvi-sensor-protocols
+// ParseSensorFormat3 parses according to https://github.com/ruuvi/ruuvi-sensor-protocols
 func ParseSensorFormat3(data []byte, macAddress string) *SensorData {
 	reader := bytes.NewReader(data)
 	result := SensorFormat3{}

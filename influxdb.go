@@ -1,6 +1,7 @@
 package main
 
 import (
+	"errors"
 	"strings"
 	"time"
 
@@ -30,38 +31,79 @@ func InitializeClient() {
 	writeAPI = client.WriteAPI(viper.GetString("influxdb.org"), viper.GetString("influxdb.bucket"))
 }
 
-// WriteData writes a single point to InfluxDB. Because the client is batched, the writes may not happen
-// immediately. Currently no error handling if the client dies for some reason or so. :)
-func WriteData(sensorData *SensorData) {
+func getPayload(sensorData *SensorData) (map[string]interface{}, string, error) {
 	labels := viper.GetStringMapString("ruuvitag-labels")
+	if sensorData.MAC == nil {
+		return map[string]interface{}{}, "", errors.New("No MAC data in payload")
+	}
+
 	// everything is lower cased for viper configs
 	label, exists := labels[strings.ToLower(*sensorData.MAC)]
 	if !exists {
 		label = *sensorData.MAC
 	}
-	// create point
-	p := influxdb2.NewPoint(
+
+	readValues := map[string]interface{}{}
+
+	if sensorData.Temperature != nil {
+		readValues["temperature"] = *sensorData.Temperature
+	}
+	if sensorData.BatteryVoltageMv != nil {
+		readValues["batteryMv"] = *sensorData.BatteryVoltageMv
+	}
+	if sensorData.Humidity != nil {
+		readValues["humidity"] = *sensorData.Humidity
+	}
+	if sensorData.Pressure != nil {
+		readValues["pressure"] = *sensorData.Pressure
+	}
+	if sensorData.TxPower != nil {
+		readValues["txPower"] = *sensorData.TxPower
+	}
+	if sensorData.AccelerationX != nil {
+		readValues["accelerationX"] = *sensorData.AccelerationX
+	}
+	if sensorData.AccelerationY != nil {
+		readValues["accelerationY"] = *sensorData.AccelerationY
+	}
+	if sensorData.AccelerationZ != nil {
+		readValues["accelerationZ"] = *sensorData.AccelerationZ
+	}
+	if sensorData.MovementCounter != nil {
+		readValues["movementCounter"] = *sensorData.MovementCounter
+	}
+	if sensorData.MeasurementSequence != nil {
+		readValues["measurementSequence"] = *sensorData.MeasurementSequence
+	}
+	if sensorData.Acceleration != nil {
+		readValues["acceleration"] = *sensorData.Acceleration
+	}
+	if sensorData.MAC != nil {
+		readValues["address"] = *sensorData.MAC
+	}
+
+	return readValues, label, nil
+}
+
+// WriteData writes a single point to InfluxDB. Because the client is batched, the writes may not happen
+// immediately. Currently no error handling if the client dies for some reason or so. :)
+func WriteData(sensorData *SensorData) {
+	// get payload
+	payload, label, err := getPayload(sensorData)
+	if err != nil {
+		return
+	}
+
+	point := influxdb2.NewPoint(
 		"system",
 		map[string]string{
 			"label": label,
 		},
-		map[string]interface{}{
-			"temperature":         *sensorData.Temperature,
-			"batteryMv":           *sensorData.BatteryVoltageMv,
-			"humidity":            *sensorData.Humidity,
-			"pressure":            *sensorData.Pressure,
-			"txPower":             *sensorData.TxPower,
-			"accelerationX":       *sensorData.AccelerationX,
-			"accelerationY":       *sensorData.AccelerationY,
-			"accelerationZ":       *sensorData.AccelerationZ,
-			"movementCounter":     *sensorData.MovementCounter,
-			"measurementSequence": *sensorData.MeasurementSequence,
-			"acceleration":        *sensorData.Acceleration,
-			"address":             *sensorData.MAC,
-		},
+		payload,
 		time.Now())
+
 	// write asynchronously
-	writeAPI.WritePoint(p)
+	writeAPI.WritePoint(point)
 }
 
 // CleanUp flushes writes and closes the connection
