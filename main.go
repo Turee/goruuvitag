@@ -59,6 +59,23 @@ func onPeriphDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
 	WriteData(sensorData)
 }
 
+func createSysInfoSender() chan struct{} {
+	sysInfoTicker := time.NewTicker(1 * time.Minute)
+	quit := make(chan struct{})
+	go func() {
+		for {
+			select {
+			case <-sysInfoTicker.C:
+				SendSysInfo()
+			case <-quit:
+				sysInfoTicker.Stop()
+				return
+			}
+		}
+	}()
+	return quit
+}
+
 func main() {
 	InitializeClient()
 	d, err := gatt.NewDevice(option.DefaultClientOptions...)
@@ -67,10 +84,13 @@ func main() {
 		return
 	}
 
+	stopSysInfo := createSysInfoSender()
+
 	sigs := make(chan os.Signal, 1)
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
 		<-sigs
+		<-stopSysInfo
 		CleanUp()
 		os.Exit(0)
 	}()

@@ -3,7 +3,9 @@ module github.com/joelmertanen/goruuvitag
 go 1.15
 
 require (
+	github.com/capnm/sysinfo v0.0.0-20130621111458-5909a53897f3
 	github.com/deepmap/oapi-codegen v1.4.2 // indirect
+	github.com/elastic/go-sysinfo v1.5.0
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
 	github.com/influxdata/influxdb-client-go v1.4.0
 	github.com/influxdata/influxdb-client-go/v2 v2.2.1

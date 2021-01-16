@@ -5,6 +5,7 @@ import (
 	"strings"
 	"time"
 
+	"github.com/elastic/go-sysinfo"
 	influxdb2 "github.com/influxdata/influxdb-client-go/v2"
 	"github.com/influxdata/influxdb-client-go/v2/api"
 	"github.com/spf13/viper"
@@ -86,7 +87,7 @@ func getPayload(sensorData *SensorData) (map[string]interface{}, string, error) 
 }
 
 // WriteData writes a single point to InfluxDB. Because the client is batched, the writes may not happen
-// immediately. Currently no error handling if the client dies for some reason or so. :)
+// immediately. Currently no error handling if the client dies for some reason.
 func WriteData(sensorData *SensorData) {
 	// get payload
 	payload, label, err := getPayload(sensorData)
@@ -99,6 +100,33 @@ func WriteData(sensorData *SensorData) {
 		map[string]string{
 			"label": label,
 		},
+		payload,
+		time.Now())
+
+	// write asynchronously
+	writeAPI.WritePoint(point)
+}
+
+// SendSysInfo sends memory info + uptime to influxdb. Expects connection to be open already
+func SendSysInfo() {
+	host, err := sysinfo.Host()
+
+	if err != nil {
+		return
+	}
+
+	payload := map[string]interface{}{}
+	payload["uptime"] = host.Info().Uptime()
+
+	memoryInfo, err := host.Memory()
+	if err == nil {
+		payload["total_memory"] = memoryInfo.Total
+		payload["used_memory"] = memoryInfo.Used
+	}
+
+	point := influxdb2.NewPoint(
+		"system",
+		map[string]string{},
 		payload,
 		time.Now())
 
