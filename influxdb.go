@@ -132,9 +132,9 @@ func SendSysInfo() {
 	}
 
 	payload := map[string]interface{}{}
-	payload["process_uptime"] = time.Now().Sub(info.StartTime)
+	payload["process_uptime_s"] = time.Now().Sub(info.StartTime).Seconds()
 
-	payload["uptime"] = host.Info().Uptime()
+	payload["uptime_s"] = host.Info().Uptime().Seconds()
 
 	memoryInfo, err := host.Memory()
 	if err == nil {
