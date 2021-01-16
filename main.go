@@ -60,6 +60,9 @@ func onPeriphDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
 }
 
 func createSysInfoSender() chan struct{} {
+	SendSysInfo()
+	log.Println("Sent system info")
+
 	sysInfoTicker := time.NewTicker(1 * time.Minute)
 	quit := make(chan struct{})
 	go func() {
