@@ -36,7 +36,7 @@ func InitializeClient() {
 func getPayload(sensorData *SensorData) (map[string]interface{}, string, error) {
 	labels := viper.GetStringMapString("ruuvitag-labels")
 	if sensorData.MAC == nil {
-		return map[string]interface{}{}, "", errors.New("No MAC data in payload")
+		return map[string]interface{}{}, "", errors.New("no MAC data in payload")
 	}
 
 	// everything is lower cased for viper configs
@@ -132,7 +132,7 @@ func SendSysInfo() {
 	}
 
 	payload := map[string]interface{}{}
-	payload["process_uptime"] = time.Now().Sub(info.StartTime)
+	payload["process_uptime"] = time.Since(info.StartTime)
 
 	payload["uptime"] = host.Info().Uptime()
 

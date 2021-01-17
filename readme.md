@@ -14,10 +14,15 @@ Fork of <https://github.com/Turee/goruuvitag>. Added support for RuuviTag's prot
 
 ```
 cp goruuvitag.json.example goruuvitag.json # You might want to check the insides too
-go build
 sudo hciconfig hci0 down
-sudo setcap 'cap_net_raw,cap_net_admin=eip' goruuvitag
-./goruuvitag
+make local-dev
+```
+
+## QA
+
+```
+make test
+make lint
 ```
 
 ## Install a systemd service

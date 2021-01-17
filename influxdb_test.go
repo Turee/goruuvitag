@@ -10,7 +10,7 @@ import (
 func TestHandleEmptyPayload(t *testing.T) {
 	testPayload := SensorData{}
 	_, _, err := getPayload(&testPayload)
-	assert.EqualError(t, err, "No MAC data in payload")
+	assert.EqualError(t, err, "no MAC data in payload")
 }
 
 func TestHandleMinimalPayload(t *testing.T) {

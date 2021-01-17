@@ -32,7 +32,7 @@ func ParseRuuviData(data []byte, macAddress string) (result *SensorData, err err
 	defer func() {
 		if r := recover(); r != nil {
 			log.Println(r)
-			err = errors.New("Exception while parsing a potential RuuviTag")
+			err = errors.New("exception while parsing a potential RuuviTag")
 		}
 	}()
 
@@ -49,5 +49,5 @@ func ParseRuuviData(data []byte, macAddress string) (result *SensorData, err err
 		log.Printf("Unknown sensor format %d", sensorFormat)
 	}
 
-	return nil, errors.New("Could not parse tag")
+	return nil, errors.New("could not parse tag")
 }
