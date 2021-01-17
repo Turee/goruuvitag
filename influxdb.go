@@ -31,6 +31,14 @@ func InitializeClient() {
 		influxdb2.DefaultOptions().SetBatchSize(20))
 	// Get non-blocking write client
 	writeAPI = client.WriteAPI(viper.GetString("influxdb.org"), viper.GetString("influxdb.bucket"))
+
+	// async write errors appear here
+	errorsCh := writeAPI.Errors()
+	go func() {
+		for err := range errorsCh {
+			log.Fatalf("Error when writing to influxdb: %s\n", err.Error())
+		}
+	}()
 }
 
 func getPayload(sensorData *SensorData) (map[string]interface{}, string, error) {
