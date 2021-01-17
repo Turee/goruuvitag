@@ -27,10 +27,10 @@ func beginScan(d gatt.Device) {
 }
 
 func onStateChanged(d gatt.Device, s gatt.State) {
-	fmt.Println("State:", s)
+	log.Println("State:", s)
 	switch s {
 	case gatt.StatePoweredOn:
-		fmt.Println("scanning...")
+		log.Println("Scanning...")
 		isPoweredOn = true
 		go beginScan(d)
 		return
@@ -43,28 +43,27 @@ func onStateChanged(d gatt.Device, s gatt.State) {
 	}
 }
 
-func onPeriphDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
+func onPeripheralDiscovered(p gatt.Peripheral, a *gatt.Advertisement, rssi int) {
 	if !IsRuuviTag(a.ManufacturerData) {
 		return
 	}
 
-	fmt.Printf("\nPeripheral ID:%s, NAME:(%s)\n", p.ID(), p.Name())
-	// fmt.Println("  TX Power Level    =", a.TxPowerLevel)
+	log.Printf("Peripheral ID:%s, NAME:(%s)\n", p.ID(), p.Name())
 	sensorData, err := ParseRuuviData(a.ManufacturerData, p.ID())
 	if err != nil {
 		log.Fatal(err)
 		return
 	}
 
-	WriteData(sensorData)
+	StoreSensorData(sensorData)
 }
 
-func createSysInfoSender() chan struct{} {
+func createSysInfoSender() chan bool {
 	SendSysInfo()
 	log.Println("Sent system info")
 
 	sysInfoTicker := time.NewTicker(1 * time.Minute)
-	quit := make(chan struct{})
+	quit := make(chan bool)
 	go func() {
 		for {
 			select {
@@ -94,13 +93,17 @@ func main() {
 	signal.Notify(sigs, syscall.SIGINT, syscall.SIGTERM)
 	go func() {
 		<-sigs
-		<-stopSysInfo
+
+		log.Println("Shutting down...")
+		stopSysInfo <- true
 		CleanUp()
 		os.Exit(0)
 	}()
 
 	// Register handlers.
-	d.Handle(gatt.PeripheralDiscovered(onPeriphDiscovered))
+	d.Handle(gatt.PeripheralDiscovered(onPeripheralDiscovered))
 	d.Init(onStateChanged)
+
+	// run until os.Exit gets called in the signal handler
 	select {}
 }

@@ -87,9 +87,9 @@ func getPayload(sensorData *SensorData) (map[string]interface{}, string, error) 
 	return readValues, label, nil
 }
 
-// WriteData writes a single point to InfluxDB. Because the client is batched, the writes may not happen
+// StoreSensorData sends a single data point to InfluxDB. Because the client is batched, the writes may not happen
 // immediately. Currently no error handling if the client dies for some reason.
-func WriteData(sensorData *SensorData) {
+func StoreSensorData(sensorData *SensorData) {
 	// get payload
 	payload, label, err := getPayload(sensorData)
 	if err != nil {
