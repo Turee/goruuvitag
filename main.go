@@ -62,7 +62,7 @@ func createSysInfoSender() chan bool {
 	SendSysInfo()
 	log.Println("Sent system info")
 
-	sysInfoTicker := time.NewTicker(1 * time.Minute)
+	sysInfoTicker := time.NewTicker(10 * time.Second)
 	quit := make(chan bool)
 	go func() {
 		for {
@@ -83,8 +83,8 @@ func main() {
 	InitializeClient()
 	d, err := gatt.NewDevice(option.DefaultClientOptions...)
 	if err != nil {
-		log.Fatalf("Failed to open device, err: %s\n", err)
-		return
+		log.Fatalf("Failed to open bluetooth device, err: %s\n", err)
+		os.Exit(1)
 	}
 
 	stopSysInfo := createSysInfoSender()

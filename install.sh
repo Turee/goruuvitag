@@ -4,7 +4,11 @@ echo "Fetching dependencies"
 go install
 
 echo "Building binary"
+rm -f goruuvitag
 go build
+
+echo "Stop current service"
+sudo systemctl stop goruuvitag
 
 echo "Copying binary"
 sudo cp goruuvitag /usr/local/bin
@@ -18,4 +22,5 @@ echo "Copying systemd service file"
 sudo cp goruuvitag.service /etc/systemd/system/goruuvitag.service
 
 echo "Enabling systemd service"
-systemctl enable goruuvitag
+sudo systemctl enable goruuvitag
+sudo systemctl restart goruuvitag
