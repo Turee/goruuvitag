@@ -1,12 +1,12 @@
 module github.com/joelmertanen/goruuvitag
 
-go 1.15
+go 1.16
 
 require (
 	github.com/deepmap/oapi-codegen v1.4.2 // indirect
-	github.com/elastic/go-sysinfo v1.5.0
+	github.com/elastic/go-sysinfo v1.6.0
 	github.com/fsnotify/fsnotify v1.4.9 // indirect
-	github.com/influxdata/influxdb-client-go/v2 v2.2.1
+	github.com/influxdata/influxdb-client-go/v2 v2.2.2
 	github.com/influxdata/line-protocol v0.0.0-20201012155213-5f565037cbc9 // indirect
 	github.com/magiconair/properties v1.8.4 // indirect
 	github.com/mitchellh/mapstructure v1.4.1 // indirect
