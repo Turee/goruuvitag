@@ -8,7 +8,7 @@ for arch in arm amd64; do
     mkdir -p $OUTDIR
     export GOOS=$os
     export GOARCH=$arch
-    go build -o $OUTDIR/goruuvitag github.com/Turee/goruuvitag
+    go build -o $OUTDIR/goruuvitag github.com/joelmertanen/goruuvitag
   done
 done
 
