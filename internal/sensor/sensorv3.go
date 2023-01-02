@@ -5,8 +5,8 @@ import (
 	"encoding/binary"
 )
 
-// Format3 RuuviData
-type Format3 struct {
+// format3 RuuviData
+type format3 struct {
 	ManufacturerID      uint16
 	DataFormat          uint8
 	Humidity            uint8
@@ -32,7 +32,7 @@ func parseFormat3Temperature(t uint8, f uint8) float64 {
 // ParseSensorFormat3 parses according to https://github.com/ruuvi/ruuvi-sensor-protocols
 func (b *BeaconData) ReadV3(data []byte, macAddress string) {
 	reader := bytes.NewReader(data)
-	result := Format3{}
+	result := format3{}
 	err := binary.Read(reader, binary.BigEndian, &result)
 	if err != nil {
 		panic(err)

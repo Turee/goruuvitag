@@ -15,18 +15,14 @@ import (
 	"github.com/paypal/gatt/examples/option"
 )
 
-type InfluxClient interface {
-	Store(label string, payload payloadtype.Payload)
-}
-
 type scan struct {
 	isPoweredOn bool
 	scanMutex   sync.Mutex
 	labels      map[string]string
-	repo        InfluxClient
+	repo        payloadtype.Storer
 }
 
-func New(labels map[string]string, repo InfluxClient) *scan {
+func New(labels map[string]string, repo payloadtype.Storer) *scan {
 	return &scan{
 		labels: labels,
 		repo:   repo,

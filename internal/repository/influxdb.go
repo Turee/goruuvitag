@@ -23,11 +23,16 @@ type Config struct {
 	Labels       map[string]string
 }
 
-func New(config Config) *influxClient {
+func New(config Config) payloadtype.ResultStorer {
 	return &influxClient{
 		config: config,
 	}
 }
+
+const (
+	tagMeasurement = "ruuvitag"
+	tagSystem      = "system"
+)
 
 // Open opens the connection
 func (cl *influxClient) Open() {
@@ -50,20 +55,23 @@ func (cl *influxClient) Open() {
 	}()
 }
 
-// CleanUp flushes writes and closes the connection
-func (cl *influxClient) CleanUp() {
+// Close flushes writes and closes the connection
+func (cl *influxClient) Close() error {
 	// Force all unwritten data to be sent
 	cl.writeAPI.Flush()
 	// Ensures background processes finishes
 	cl.clientInstance.Close()
+	return nil
 }
 
-func (cl *influxClient) SendSysInfo(payload payloadtype.Payload) {
+func (cl *influxClient) StoreSysInfo(payload payloadtype.Payload) {
 	point := influxdb2.NewPoint(
-		"system",
+		tagSystem,
+		//"ruuvitag",
 		map[string]string{},
 		payload,
-		time.Now())
+		time.Now(),
+	)
 
 	// write asynchronously
 	cl.writeAPI.WritePoint(point)
@@ -71,12 +79,14 @@ func (cl *influxClient) SendSysInfo(payload payloadtype.Payload) {
 
 func (cl *influxClient) Store(label string, payload payloadtype.Payload) {
 	point := influxdb2.NewPoint(
-		"ruuvitag",
+		tagMeasurement,
+		//"ruuvitag",
 		map[string]string{
 			"label": label,
 		},
 		payload,
-		time.Now())
+		time.Now(),
+	)
 
 	// write asynchronously
 	cl.writeAPI.WritePoint(point)
