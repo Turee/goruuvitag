@@ -8,10 +8,6 @@ import (
 	"github.com/joelmertanen/goruuvitag/internal/payloadtype"
 )
 
-type InfluxClient interface {
-	SendSysInfo(p payloadtype.Payload)
-}
-
 func getSysInfo() payloadtype.Payload {
 	host, err := sysinfo.Host()
 
@@ -44,8 +40,8 @@ func getSysInfo() payloadtype.Payload {
 	return payload
 }
 
-func Start(client InfluxClient) chan bool {
-	client.SendSysInfo(getSysInfo())
+func Start(client payloadtype.Storer) chan bool {
+	client.StoreSysInfo(getSysInfo())
 	log.Println("Sent system info")
 
 	sysInfoTicker := time.NewTicker(10 * time.Second)
@@ -54,7 +50,7 @@ func Start(client InfluxClient) chan bool {
 		for {
 			select {
 			case <-sysInfoTicker.C:
-				client.SendSysInfo(getSysInfo())
+				client.StoreSysInfo(getSysInfo())
 				log.Println("Sent system info")
 			case <-quit:
 				sysInfoTicker.Stop()

@@ -6,7 +6,6 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/joelmertanen/goruuvitag/internal/payloadtype"
 	"github.com/joelmertanen/goruuvitag/internal/repository"
 	"github.com/joelmertanen/goruuvitag/internal/service"
 	"github.com/joelmertanen/goruuvitag/internal/sysinfoticker"
@@ -36,12 +35,6 @@ type Scan interface {
 	Start() error
 }
 
-type InfluxClient interface {
-	Open()
-	CleanUp()
-	Store(label string, payload payloadtype.Payload)
-}
-
 func main() {
 	config := readConfig()
 	influxClient := repository.New(config)
@@ -56,7 +49,9 @@ func main() {
 
 		log.Println("Shutting down...")
 		stopSysInfo <- true
-		influxClient.CleanUp()
+		if err := influxClient.Close(); err != nil {
+			os.Exit(1)
+		}
 		os.Exit(0)
 	}()
 
