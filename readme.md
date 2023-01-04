@@ -1,3 +1,11 @@
+
+# This repository has been deprecated!
+
+Check out this fork instead:
+
+https://github.com/joelmertanen/goruuvitag
+
+
 [![Build Status](https://travis-ci.org/Turee/goruuvitag.svg?branch=master)](https://travis-ci.org/Turee/goruuvitag)
 
 # Description
